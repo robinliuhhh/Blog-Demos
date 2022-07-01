@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/${schema}?characterEncoding=utf8&useSSL=true&timezone=GMT%2B8
+    username: ${username}
+    password: ${password}
+  jackson:
+    # 设置全局时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    # 设置全局时区 Asia/Shanghai
+    time-zone: GMT+8
+
+mybatis-plus:
+  configuration:
+    # 关闭驼峰转换 否则entity的userId映射到数据库会变为user_id
+    map-underscore-to-camel-case: false
+    # 开启控制台SQL日志打印
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
